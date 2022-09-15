@@ -2,7 +2,7 @@
 #include <linux/module.h>
 #include <linux/kernel.h>
 
-#include "tcp_server.h"
+#include "module_main.h"
 
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Seiki Makino");
