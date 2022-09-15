@@ -2,6 +2,8 @@
 #include <linux/module.h>
 #include <linux/kernel.h>
 
+#include "tcp_server.h"
+
 MODULE_LICENSE("GPL");
 MODULE_AUTHOR("Seiki Makino");
 MODULE_DESCRIPTION("A simple example Linux module.");
