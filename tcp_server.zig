@@ -1,7 +1,6 @@
 const c = @cImport({
-    @cInclude("linux/init.h");
-    @cInclude("linux/module.h");
     @cInclude("linux/kernel.h");
+    @cInclude("linux/module.h");
     @cInclude("linux/printk.h");
 });
 
