@@ -1,5 +1,5 @@
-obj-m += module_init.o
-module_init-objs := ./module_init.o ./tcp_server.o
+obj-m += my_tcp_server.o
+my_tcp_server-objs := ./module_init.o ./tcp_server.o
 
 BULID_DIR := /lib/modules/$(shell uname -r)/build
 

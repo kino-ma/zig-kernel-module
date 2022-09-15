@@ -17,8 +17,8 @@ static int __init lkm_example_init(void) {
 }
 
 static void __exit lkm_example_exit(void) {
-    printk(KERN_INFO "Exited zig.\n");
     exit_hellokernel();
+    printk(KERN_INFO "Exited zig.\n");
 }
 
 module_init(lkm_example_init);
