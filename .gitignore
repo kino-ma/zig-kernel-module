@@ -5,3 +5,4 @@
 *.mod*
 modules.order
 Module.symvers
+tcp_server.h

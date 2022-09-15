@@ -1,8 +1,4 @@
-const c = @cImport({
-    @cInclude("linux/kernel.h");
-    @cInclude("linux/module.h");
-    @cInclude("linux/printk.h");
-});
+const c = @cImport(@cInclude("printk.h"));
 
 export fn init_hellokernel() c_int {
     const c_str: [*c]const u8 = "Hello kernel!\n";

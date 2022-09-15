@@ -1,5 +1,5 @@
-obj-m += tcp_server.o
 obj-m += module_init.o
+module_init-objs := ./module_init.o ./tcp_server.o
 
 BULID_DIR := /lib/modules/$(shell uname -r)/build
 KERNEL_INCLUDES := $(BULID_DIR)/include
@@ -13,10 +13,7 @@ clean:
 
 %.o: %.zig
 	rm -f $(basename $<).h
-	cp -r $(KERNEL_INCLUDES)/linux/* ./include/.
-	zig build-obj --library c -isystem ./include -femit-h=$(basename $<).h $<
+	zig build-obj --library c -isystem ./include -isystem $(KERNEL_INCLUDES) -femit-h=$(basename $<).h $<
 
 tcp_server.h: tcp_server.o
-	sed -ine '/^#include <zig.h>/d; s/^ZIG_EXTERN_C/extern/; /void printk/d' "$@"
-
-#zig-y += tcp_server.o module.o
+	sed -i -e '/^#include <zig.h>/d; s/^ZIG_EXTERN_C/extern/; /void printk/d' "$@"
